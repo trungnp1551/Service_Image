@@ -10,7 +10,7 @@ router
 
 router
     .route('/:userId')
-    .get(imageController.getUrl)
+    .get(imageController.getListImage)
     .post(upload.single("image"), imageController.createImage)
 
 module.exports = router
