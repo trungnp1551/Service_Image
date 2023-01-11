@@ -21,7 +21,8 @@ exports.getUrl = async (req, res) => {
 }
 
 exports.getListImage = async (req, res) => {
-    const id = req.params.userId
+    const id = req.userId
+    console.log(id)
     try {
         const listImage = await imageService.getListImageByUserId(id)
         if (listImage) {
@@ -41,7 +42,7 @@ exports.getListImage = async (req, res) => {
 }
 
 exports.createImage = async (req, res) => {
-    const id = req.params.userId
+    const id = req.userId
     const { type } = req.body
     try {
         if (req.file != undefined) {

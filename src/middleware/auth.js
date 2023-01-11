@@ -6,8 +6,8 @@ module.exports = async (req, res, next) => {
         const token = req.headers.authorization
 
         const decoded = jwt.verify(token, process.env.JWT_KEY)
-        //console.log("DECODE: " + decoded.userId)
-        req.userId = decoded.userId
+        console.log("DECODE: " + decoded)
+        req.userId = decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name']
         next()
     }
     catch (error) {

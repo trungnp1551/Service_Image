@@ -5,7 +5,7 @@ const imageSchema = mongoose.Schema({
     userId: String,
     type: {
         type: String,
-        enum:['CCCD','BHYT','BLX'],
+        enum:['CCCD-FR','BHYT-FR','BLX-FR','CCCD-B','BHYT-B','BLX-B'],
     },
     imageId: String,
     imageUrl: String,
